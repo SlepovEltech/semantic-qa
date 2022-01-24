@@ -4,7 +4,7 @@
       <router-link to="/" class="navbar-brand">SemanticQA</router-link>
       <div class="navbar-nav mr-auto">
         <li class="nav-item">
-          <router-link to="/search" class="nav-link">Поиск</router-link>
+          <router-link to="/" class="nav-link">Поиск</router-link>
         </li>
         <li class="nav-item">
           <router-link to="/manual" class="nav-link">Инструкция</router-link>

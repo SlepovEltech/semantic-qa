@@ -3,7 +3,6 @@ import { createWebHistory, createRouter } from "vue-router";
 const routes =  [
   {
     path: "/",
-    alias: "/search",
     name: "search",
     component: () => import("./components/SearchPage")
   },

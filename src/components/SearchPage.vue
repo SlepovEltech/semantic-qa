@@ -4,7 +4,7 @@
       <div class="input-group mb-3">
 
         <input type="text" class="form-control" placeholder="Задайте вопрос"
-          v-model="query"/>
+               v-model="query" v-on:click="clearSearchResults"/>
         <div class="input-group-append">
           <button class="btn btn-outline-secondary" type="button"
             @click="searchAnswer"
@@ -20,7 +20,8 @@
                 <img v-if="answer.pic" class="card-img-top" :src=answer.pic.value>
                 <div class="card-body">
                     <h5 v-if="answer.item_label" class="card-title">{{ answer.item_label.value }}</h5>
-                    <a :href=answer.item.value v-if="answer.item" >{{answer.item.value}}</a>
+                    <h4 v-if="answer.item.type=='literal'">{{answer.item.value}}</h4>
+                    <a :href=answer.item.value v-else >{{answer.item.value}}</a>
                     <p class="card-text" v-if="answer.item_description">{{ answer.item_description.value }}</p>
                 </div>
             </div>
@@ -44,19 +45,18 @@ export default {
   },
   methods: {
     searchAnswer() {
+      this.clearSearchResults();
       SearchService.searchAnswer(this.query)
         .then(response => {
           this.answers = response.data;
-          this.show = true
           console.log(response.data);
         })
         .catch(e => {
           console.log(e);
         });
     },
-    setActiveTutorial(tutorial, index) {
-      this.currentAnswer = tutorial;
-      this.currentIndex = tutorial ? index : -1;
+    clearSearchResults(){
+      this.answers = null;
     }
   },
   mounted() {

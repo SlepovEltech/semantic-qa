@@ -85,10 +85,6 @@ export default {
   },
   methods: {
     executeQuery() {
-      // this.query = {
-      //   select: this.select_var_1,
-      //   body : this.subject_1
-      //   }
       this.query = {
         select_section : {
           field_1 : this.select_var_1,

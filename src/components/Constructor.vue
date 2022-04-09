@@ -1,16 +1,6 @@
 <template>
   <div class="row">
     <div class="col-md-12">
-      
-        <!-- <div class="input-group mb-3">
-        <div v-for="(selectField, idx) in selectFields" :key="idx" class="input-group mb-3">
-          <input type="text" class="form-control" :id="selectField.label" :placehodler="selectField.placeholder"/>
-          <button class="btn btn-primary" type="button" @click="removeSelectField">Удалить</button>
-        </div>
-        <button class="btn btn-primary offset-md-5" type="button" @click="addSelectField">
-             Добавить переменную
-        </button>
-      </div> -->
 
       <div class="input-group mb-3">
         <h3 class="mr-3">Извлечь</h3>
@@ -57,11 +47,12 @@
 
    
     <div class="col-md-12 card-columns">
-            <div class="card my-3" v-for="(answer, index) in answers" :key="index">
-              <div v-for="(field, field_index) in answer" :key="field_index">
-                    <h5>{{field_index}}</h5> <a :href=field.value>{{ field.value }}</a>
-              </div>
-            </div>
+      <div class="card my-3" v-for="(answer, index) in answers" :key="index">
+        <div v-for="(field, field_index) in answer" :key="field_index">
+              <h5>{{field_index}}</h5> <a :href=field.value>{{ field.value }}</a>
+        </div>
+      </div>
+      
     </div>
 
   </div>
@@ -107,10 +98,10 @@ export default {
       SearchService.executeConstructor(this.query)
         .then(response => {
           this.answers = response.data;
-
           console.log(response.data);
         })
         .catch(e => {
+
           console.log(e);
         });
     },

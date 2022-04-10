@@ -47,12 +47,13 @@
 
    
     <div class="col-md-12 card-columns">
+      <h3>{{answer_error}}</h3>
       <div class="card my-3" v-for="(answer, index) in answers" :key="index">
         <div v-for="(field, field_index) in answer" :key="field_index">
               <h5>{{field_index}}</h5> <a :href=field.value>{{ field.value }}</a>
         </div>
       </div>
-      
+
     </div>
 
   </div>
@@ -71,7 +72,7 @@ export default {
       currentAnswer: null,
       currentIndex: -1,
       query:null,
-      
+      answer_error:null
     };
   },
   methods: {
@@ -101,8 +102,10 @@ export default {
           console.log(response.data);
         })
         .catch(e => {
-
+          this.answer_error = 'Произошла ошибка при составлении SPARQL запроса'
+          console.log("сосать+лежать");
           console.log(e);
+
         });
     },
     clearSearchResults(){

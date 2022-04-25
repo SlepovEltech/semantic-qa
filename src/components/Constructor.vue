@@ -28,14 +28,6 @@
                v-model="object_2" v-on:click="entityAutoComplete"/>          
       </div>
 
-      <!-- <div class="offset-md-5">
-          <button class="btn btn-primary" type="button"
-            @click="executeQuery"
-          >
-            Добавить условие
-          </button>
-        </div> -->
-
        <div class="offset-md-5">
           <button class="btn btn-primary" type="button"
             @click="executeQuery"
@@ -64,7 +56,7 @@ import SearchService from "../services/SearchService"
 
 export default {
   name: "constructor",
-
+  
   data() {
     return {
       answers: [],
@@ -72,7 +64,7 @@ export default {
       currentAnswer: null,
       currentIndex: -1,
       query:null,
-      answer_error:null
+      answer_error:null,
     };
   },
   methods: {
@@ -112,26 +104,12 @@ export default {
       this.answers = null;
     },
     
-    addSelectField () {
-        this.selectFields.push({
-          label: 'selectField-' + (this.selectFields.length + 1),
-          placeholder: 'selectField' + (this.selectFields.length + 1)
-        })
-     },
-
-    removeSelectField (index) {
-        this.selectFields.splice(index, 1)
-    },
-
-    entityAutoComplete () {
-       
-    },
-
   },
   mounted() {
     this.answers = null;
   }
 };
+
 </script>
 
 <style>

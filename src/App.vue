@@ -12,7 +12,7 @@
                   <a class="nav-link" href="/search">Поиск</a>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/constructor">Конструктор запросов</a>
+                  <a class="nav-link" href="/autocomplete">Конструктор запросов</a>
               </li>
               <li class="nav-item">
                   <a class="nav-link" href="/manual">Инструкция</a>

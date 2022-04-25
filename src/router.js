@@ -17,6 +17,11 @@ const routes =  [
     component: () => import("./components/Manual")
   },
   {
+    path: "/autocomplete",
+    name: "autocomplete",
+    component: () => import("./components/Autocomplete")
+  },
+  {
     path: "/constructor",
     name: "constructor",
     component: () => import("./components/Constructor")

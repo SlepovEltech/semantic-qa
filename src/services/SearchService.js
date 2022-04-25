@@ -9,6 +9,10 @@ class SearchService {
     return http.get(`/autocomplete/entity?substr=${substring}`);
   }
 
+  getPredicate(substring){
+    return http.get(`/autocomplete/predicate?substr=${substring}`);
+  }
+
   executeConstructor(data) {
     return http.post("/", data);
   }

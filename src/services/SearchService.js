@@ -6,11 +6,11 @@ class SearchService {
   }
 
   getEntity(substring){
-    return http.get(`/autocomplete/entity?substr=${substring}`);
+    return http.get(`/autocomplete/entity?substr=${substring.toLowerCase()}`);
   }
 
   getPredicate(substring){
-    return http.get(`/autocomplete/predicate?substr=${substring}`);
+    return http.get(`/autocomplete/predicate?substr=${substring.toLowerCase()}`);
   }
 
   executeConstructor(data) {

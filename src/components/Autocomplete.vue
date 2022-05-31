@@ -114,7 +114,6 @@ export default {
 				.then(response => {
 					this.answers = response.data;
 
-					//for(let key of response.data[0].keys)
 					this.table_header = Object.keys(response.data[0])
 					console.log(response.data);
 				})
